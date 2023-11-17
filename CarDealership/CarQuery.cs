@@ -8,56 +8,62 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CarDealership
 {
-    public partial class Form1 : Form
+    public partial class CarQuery : Form
     {
-       
-        public Form1()
+
+        const string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Douglas\source\repos\CarDealership\CarDealership\Cars.mdf; Integrated Security = True";
+        public CarQuery()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void CarQuery_Load(object sender, EventArgs e)
         {
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string carModel = "N/A";
+            string carBrand = "N/A";
+            string selected = comboBoxCars.Text; 
+
             try
             {
                 SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-
-                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Douglas\source\repos\CarDealership\CarDealership\Cars.mdf; Integrated Security = True";  
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     
                     connection.Open();
 
-                    string sql = "SELECT * FROM Cars";
+                    string sql = $"SELECT CarModel, CarBrand FROM Cars WHERE CarBrand = '{selected}'";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        using (SqlDataReader reader = command.ExecuteReader())
+                        using (SqlDataReader carReader = command.ExecuteReader())
                         {
-                            while (reader.Read())
+                            while (carReader.Read())
                             {
-                                MessageBox.Show(reader.GetString(2));
+                               carModel = (string) carReader["CarModel"];
+                               carBrand = (string) carReader["CarBrand"];
                             }
+                            carReader.Close();
                         }
                     }
-
                     connection.Close();
                 }
             }
             catch (SqlException er)
             {
-                MessageBox.Show("Failed to connect to Database!", er.ToString());
+                MessageBox.Show("Failed to connect to Database!" + er.ToString());
             }
-        
+
+            MessageBox.Show($"{carBrand} {carModel}"); 
 
         }
     }
