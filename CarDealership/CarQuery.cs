@@ -30,7 +30,10 @@ namespace CarDealership
         {
             string carModel = "N/A";
             string carBrand = "N/A";
-            string selected = comboBoxCars.Text; 
+            string selected = comboBoxCars.Text;
+            List<string> cars = new List<string>();
+
+            richTextBoxCars.Clear(); 
 
             try
             {
@@ -49,8 +52,9 @@ namespace CarDealership
                         {
                             while (carReader.Read())
                             {
-                               carModel = (string) carReader["CarModel"];
-                               carBrand = (string) carReader["CarBrand"];
+
+                               cars.Add($"{(string)carReader["CarBrand"]} {(string)carReader["CarModel"]}");
+                               
                             }
                             carReader.Close();
                         }
@@ -63,8 +67,12 @@ namespace CarDealership
                 MessageBox.Show("Failed to connect to Database!" + er.ToString());
             }
 
-            MessageBox.Show($"{carBrand} {carModel}"); 
+            foreach(string car in cars)
+            {
+                richTextBoxCars.AppendText($"{car}\n");  
+            }
 
         }
+
     }
 }
