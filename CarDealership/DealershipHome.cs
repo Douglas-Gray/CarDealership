@@ -65,6 +65,7 @@ namespace CarDealership
             catch (SqlException er)
             {
                 MessageBox.Show("Failed to connect to Database!" + er.ToString());
+                connection.Close();
             }
 
             foreach(string car in cars)

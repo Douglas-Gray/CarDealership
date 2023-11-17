@@ -33,6 +33,9 @@
             this.txtCarModel = new System.Windows.Forms.TextBox();
             this.txtCarBrand = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.lblCarReg = new System.Windows.Forms.Label();
+            this.lblCarBrand = new System.Windows.Forms.Label();
+            this.lblCarModel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnHome
@@ -76,11 +79,41 @@
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
+            // lblCarReg
+            // 
+            this.lblCarReg.AutoSize = true;
+            this.lblCarReg.Location = new System.Drawing.Point(58, 138);
+            this.lblCarReg.Name = "lblCarReg";
+            this.lblCarReg.Size = new System.Drawing.Size(103, 16);
+            this.lblCarReg.TabIndex = 5;
+            this.lblCarReg.Text = "Car Registration";
+            // 
+            // lblCarBrand
+            // 
+            this.lblCarBrand.AutoSize = true;
+            this.lblCarBrand.Location = new System.Drawing.Point(58, 166);
+            this.lblCarBrand.Name = "lblCarBrand";
+            this.lblCarBrand.Size = new System.Drawing.Size(67, 16);
+            this.lblCarBrand.TabIndex = 6;
+            this.lblCarBrand.Text = "Car Brand";
+            // 
+            // lblCarModel
+            // 
+            this.lblCarModel.AutoSize = true;
+            this.lblCarModel.Location = new System.Drawing.Point(58, 191);
+            this.lblCarModel.Name = "lblCarModel";
+            this.lblCarModel.Size = new System.Drawing.Size(69, 16);
+            this.lblCarModel.TabIndex = 7;
+            this.lblCarModel.Text = "Car Model";
+            // 
             // DealershipNewCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblCarModel);
+            this.Controls.Add(this.lblCarBrand);
+            this.Controls.Add(this.lblCarReg);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtCarBrand);
             this.Controls.Add(this.txtCarModel);
@@ -101,5 +134,8 @@
         private System.Windows.Forms.TextBox txtCarModel;
         private System.Windows.Forms.TextBox txtCarBrand;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Label lblCarReg;
+        private System.Windows.Forms.Label lblCarBrand;
+        private System.Windows.Forms.Label lblCarModel;
     }
 }

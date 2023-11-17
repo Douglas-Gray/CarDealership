@@ -25,33 +25,30 @@ namespace CarDealership
             
         }
 
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            DealershipHome newForm = new DealershipHome();
-
-            Hide();
-            newForm.Show();
-        }
-
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            string carReg = txtCarReg.Text;
+            string carBrand = txtCarBrand.Text;
+            string carModel = txtCarModel.Text; 
+
             SqlConnection connection = new SqlConnection(connectionString);
+
             try
             {
 
                 using (connection)
                 {
-
                     connection.Open();
                     {
 
-                        string command = "INSERT INTO Cars (CarReg, CarBrand, CarModel) VALUES ('BF12YUT', 'Honda', 'Jazz')";
+                        string sql = $"INSERT INTO Cars (CarReg, CarBrand, CarModel) VALUES ('{carReg}', '{carBrand}', '{carModel}')";
 
-                        var cmd = new SqlCommand(command, connection);
-                        //cmd.Parameters.AddWithValue("@bar", 17);
+                        var cmd = new SqlCommand(sql, connection);
+                        
                         cmd.ExecuteNonQuery();
                         
                     }
+                    MessageBox.Show("New Record Created"); 
                     connection.Close();
                 }
             }
@@ -61,5 +58,14 @@ namespace CarDealership
                 connection.Close();
             }
         }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            DealershipHome newForm = new DealershipHome();
+
+            Hide();
+            newForm.Show();
+        }
+
     }
 }
