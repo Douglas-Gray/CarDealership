@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace CarDealership
 {
@@ -35,16 +36,15 @@ namespace CarDealership
             List<string> cars = new List<string>();
 
             SqlConnection connection = new SqlConnection(connectionString);
+            listBoxCar.Items.Clear();
 
-            listBoxCar.Items.Clear(); 
+            string sql = (selected.Equals("All")) ? $"SELECT CarModel, CarBrand, CarReg FROM Cars" : $"SELECT CarModel, CarBrand, CarReg FROM Cars WHERE CarBrand = '{selected}'"; 
 
             try
             {
                 using (connection)
                 {                   
                     connection.Open();
-
-                    string sql = $"SELECT CarModel, CarBrand FROM Cars WHERE CarBrand = '{selected}'";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
@@ -53,7 +53,7 @@ namespace CarDealership
                             while (carReader.Read())
                             {
 
-                               cars.Add($"{(string)carReader["CarBrand"]} {(string)carReader["CarModel"]}");
+                               cars.Add($"{(string)carReader["CarBrand"]} {(string)carReader["CarModel"]} {(string)carReader["CarReg"]}");
                                
                             }
                             carReader.Close();
@@ -79,9 +79,7 @@ namespace CarDealership
         {
             DealershipNewCar newForm = new DealershipNewCar();
 
-            Hide();
-            newForm.Show(); 
-              
+            newForm.Show();               
         }
     }
 }

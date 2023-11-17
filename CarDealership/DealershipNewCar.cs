@@ -33,6 +33,8 @@ namespace CarDealership
 
             SqlConnection connection = new SqlConnection(connectionString);
 
+            string sql = $"INSERT INTO Cars (CarReg, CarBrand, CarModel) VALUES ('{carReg}', '{carBrand}', '{carModel}')";
+
             lblRegValidation.Text = (carReg.Length <= 0 || carReg.Length > 7) ? "Car registration 1 - 7 Characters" : "";
             lblBrandValidation.Text = (carBrand.Length <= 0) ? "Car brand field required" : "";
             lblModelValidation.Text = (carModel.Length <= 0) ? "Car model field required" : "";
@@ -43,7 +45,6 @@ namespace CarDealership
             }
             else
             {
-
                 try
                 {
 
@@ -51,8 +52,6 @@ namespace CarDealership
                     {
                         connection.Open();
                         {
-
-                            string sql = $"INSERT INTO Cars (CarReg, CarBrand, CarModel) VALUES ('{carReg}', '{carBrand}', '{carModel}')";
 
                             var cmd = new SqlCommand(sql, connection);
 
@@ -71,15 +70,10 @@ namespace CarDealership
             }
         }
 
-        private void btnHome_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-            DealershipHome newForm = new DealershipHome();
-
             Hide();
-            newForm.Show();
         }
-
-
 
     }
 }

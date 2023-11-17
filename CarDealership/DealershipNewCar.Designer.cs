@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnHome = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.txtCarReg = new System.Windows.Forms.TextBox();
             this.txtCarModel = new System.Windows.Forms.TextBox();
             this.txtCarBrand = new System.Windows.Forms.TextBox();
@@ -42,40 +42,40 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnHome
+            // btnExit
             // 
-            this.btnHome.Location = new System.Drawing.Point(207, 305);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(100, 32);
-            this.btnHome.TabIndex = 0;
-            this.btnHome.Text = "Home";
-            this.btnHome.UseVisualStyleBackColor = true;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            this.btnExit.Location = new System.Drawing.Point(261, 348);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(100, 32);
+            this.btnExit.TabIndex = 0;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // txtCarReg
             // 
-            this.txtCarReg.Location = new System.Drawing.Point(207, 136);
+            this.txtCarReg.Location = new System.Drawing.Point(261, 179);
             this.txtCarReg.Name = "txtCarReg";
             this.txtCarReg.Size = new System.Drawing.Size(100, 22);
             this.txtCarReg.TabIndex = 1;
             // 
             // txtCarModel
             // 
-            this.txtCarModel.Location = new System.Drawing.Point(207, 192);
+            this.txtCarModel.Location = new System.Drawing.Point(261, 235);
             this.txtCarModel.Name = "txtCarModel";
             this.txtCarModel.Size = new System.Drawing.Size(100, 22);
             this.txtCarModel.TabIndex = 2;
             // 
             // txtCarBrand
             // 
-            this.txtCarBrand.Location = new System.Drawing.Point(207, 164);
+            this.txtCarBrand.Location = new System.Drawing.Point(261, 207);
             this.txtCarBrand.Name = "txtCarBrand";
             this.txtCarBrand.Size = new System.Drawing.Size(100, 22);
             this.txtCarBrand.TabIndex = 3;
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(207, 245);
+            this.btnSubmit.Location = new System.Drawing.Point(261, 288);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 4;
@@ -86,7 +86,7 @@
             // lblCarReg
             // 
             this.lblCarReg.AutoSize = true;
-            this.lblCarReg.Location = new System.Drawing.Point(87, 139);
+            this.lblCarReg.Location = new System.Drawing.Point(141, 182);
             this.lblCarReg.Name = "lblCarReg";
             this.lblCarReg.Size = new System.Drawing.Size(103, 16);
             this.lblCarReg.TabIndex = 5;
@@ -95,7 +95,7 @@
             // lblCarBrand
             // 
             this.lblCarBrand.AutoSize = true;
-            this.lblCarBrand.Location = new System.Drawing.Point(87, 167);
+            this.lblCarBrand.Location = new System.Drawing.Point(141, 210);
             this.lblCarBrand.Name = "lblCarBrand";
             this.lblCarBrand.Size = new System.Drawing.Size(67, 16);
             this.lblCarBrand.TabIndex = 6;
@@ -104,7 +104,7 @@
             // lblCarModel
             // 
             this.lblCarModel.AutoSize = true;
-            this.lblCarModel.Location = new System.Drawing.Point(87, 192);
+            this.lblCarModel.Location = new System.Drawing.Point(141, 235);
             this.lblCarModel.Name = "lblCarModel";
             this.lblCarModel.Size = new System.Drawing.Size(69, 16);
             this.lblCarModel.TabIndex = 7;
@@ -115,7 +115,7 @@
             this.lblRegValidation.AutoSize = true;
             this.lblRegValidation.BackColor = System.Drawing.SystemColors.Control;
             this.lblRegValidation.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblRegValidation.Location = new System.Drawing.Point(313, 139);
+            this.lblRegValidation.Location = new System.Drawing.Point(367, 182);
             this.lblRegValidation.Name = "lblRegValidation";
             this.lblRegValidation.Size = new System.Drawing.Size(0, 16);
             this.lblRegValidation.TabIndex = 8;
@@ -125,7 +125,7 @@
             this.lblBrandValidation.AutoSize = true;
             this.lblBrandValidation.BackColor = System.Drawing.SystemColors.Control;
             this.lblBrandValidation.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblBrandValidation.Location = new System.Drawing.Point(313, 167);
+            this.lblBrandValidation.Location = new System.Drawing.Point(367, 210);
             this.lblBrandValidation.Name = "lblBrandValidation";
             this.lblBrandValidation.Size = new System.Drawing.Size(0, 16);
             this.lblBrandValidation.TabIndex = 9;
@@ -135,7 +135,7 @@
             this.lblModelValidation.AutoSize = true;
             this.lblModelValidation.BackColor = System.Drawing.SystemColors.Control;
             this.lblModelValidation.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblModelValidation.Location = new System.Drawing.Point(313, 192);
+            this.lblModelValidation.Location = new System.Drawing.Point(367, 235);
             this.lblModelValidation.Name = "lblModelValidation";
             this.lblModelValidation.Size = new System.Drawing.Size(0, 16);
             this.lblModelValidation.TabIndex = 10;
@@ -144,9 +144,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(83, 60);
+            this.label1.Location = new System.Drawing.Point(137, 103);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(231, 39);
+            this.label1.Size = new System.Drawing.Size(223, 38);
             this.label1.TabIndex = 11;
             this.label1.Text = "Add New Car";
             // 
@@ -154,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(489, 466);
+            this.ClientSize = new System.Drawing.Size(574, 480);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblModelValidation);
             this.Controls.Add(this.lblBrandValidation);
@@ -166,7 +166,7 @@
             this.Controls.Add(this.txtCarBrand);
             this.Controls.Add(this.txtCarModel);
             this.Controls.Add(this.txtCarReg);
-            this.Controls.Add(this.btnHome);
+            this.Controls.Add(this.btnExit);
             this.Name = "DealershipNewCar";
             this.Text = "Dealership New Car";
             this.Load += new System.EventHandler(this.DealershipNewCar_Load);
@@ -177,7 +177,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.TextBox txtCarReg;
         private System.Windows.Forms.TextBox txtCarModel;
         private System.Windows.Forms.TextBox txtCarBrand;
