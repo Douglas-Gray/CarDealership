@@ -44,7 +44,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(329, 198);
+            this.btnSubmit.Location = new System.Drawing.Point(382, 206);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 0;
@@ -76,7 +76,7 @@
             "Suzuki",
             "Mazda",
             "N/A Brand"});
-            this.comboBoxBrands.Location = new System.Drawing.Point(111, 197);
+            this.comboBoxBrands.Location = new System.Drawing.Point(164, 205);
             this.comboBoxBrands.Name = "comboBoxBrands";
             this.comboBoxBrands.Size = new System.Drawing.Size(121, 24);
             this.comboBoxBrands.TabIndex = 1;
@@ -84,7 +84,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(108, 178);
+            this.label1.Location = new System.Drawing.Point(161, 186);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 16);
             this.label1.TabIndex = 3;
@@ -94,7 +94,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(111, 58);
+            this.label2.Location = new System.Drawing.Point(164, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(242, 38);
             this.label2.TabIndex = 4;
@@ -104,14 +104,14 @@
             // 
             this.listBoxCar.FormattingEnabled = true;
             this.listBoxCar.ItemHeight = 16;
-            this.listBoxCar.Location = new System.Drawing.Point(111, 264);
+            this.listBoxCar.Location = new System.Drawing.Point(164, 272);
             this.listBoxCar.Name = "listBoxCar";
             this.listBoxCar.Size = new System.Drawing.Size(293, 164);
             this.listBoxCar.TabIndex = 5;
             // 
             // btnAddNewCars
             // 
-            this.btnAddNewCars.Location = new System.Drawing.Point(111, 471);
+            this.btnAddNewCars.Location = new System.Drawing.Point(164, 479);
             this.btnAddNewCars.Name = "btnAddNewCars";
             this.btnAddNewCars.Size = new System.Drawing.Size(140, 31);
             this.btnAddNewCars.TabIndex = 6;
@@ -124,7 +124,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(746, 570);
+            this.ClientSize = new System.Drawing.Size(671, 600);
             this.Controls.Add(this.btnAddNewCars);
             this.Controls.Add(this.listBoxCar);
             this.Controls.Add(this.label2);

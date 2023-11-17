@@ -33,9 +33,13 @@ namespace CarDealership
 
             SqlConnection connection = new SqlConnection(connectionString);
 
-            if (carReg.Length <= 0 || carBrand.Length <= 0 || carModel.Length <= 0)
+            lblRegValidation.Text = (carReg.Length <= 0 || carReg.Length > 7) ? "Car registration 1 - 7 Characters" : "";
+            lblBrandValidation.Text = (carBrand.Length <= 0) ? "Car brand field required" : "";
+            lblModelValidation.Text = (carModel.Length <= 0) ? "Car model field required" : "";
+
+            if (carReg.Length <= 0 || carReg.Length > 7 || carBrand.Length <= 0 || carModel.Length <= 0)
             {
-                MessageBox.Show("Please correct records to input");
+                MessageBox.Show("Please valid data to input record to database");
             }
             else
             {
