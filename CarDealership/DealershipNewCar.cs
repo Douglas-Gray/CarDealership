@@ -33,29 +33,37 @@ namespace CarDealership
 
             SqlConnection connection = new SqlConnection(connectionString);
 
-            try
+            if (carReg.Length <= 0 || carBrand.Length <= 0 || carModel.Length <= 0)
+            {
+                MessageBox.Show("Please correct records to input");
+            }
+            else
             {
 
-                using (connection)
+                try
                 {
-                    connection.Open();
+
+                    using (connection)
                     {
+                        connection.Open();
+                        {
 
-                        string sql = $"INSERT INTO Cars (CarReg, CarBrand, CarModel) VALUES ('{carReg}', '{carBrand}', '{carModel}')";
+                            string sql = $"INSERT INTO Cars (CarReg, CarBrand, CarModel) VALUES ('{carReg}', '{carBrand}', '{carModel}')";
 
-                        var cmd = new SqlCommand(sql, connection);
-                        
-                        cmd.ExecuteNonQuery();
-                        
+                            var cmd = new SqlCommand(sql, connection);
+
+                            cmd.ExecuteNonQuery();
+
+                        }
+                        MessageBox.Show("New Record Created");
+                        connection.Close();
                     }
-                    MessageBox.Show("New Record Created"); 
+                }
+                catch (SqlException er)
+                {
+                    MessageBox.Show("Failed to connect to Database!" + er.ToString());
                     connection.Close();
                 }
-            }
-            catch (SqlException er)
-            {
-                MessageBox.Show("Failed to connect to Database!" + er.ToString());
-                connection.Close();
             }
         }
 
@@ -66,6 +74,8 @@ namespace CarDealership
             Hide();
             newForm.Show();
         }
+
+
 
     }
 }

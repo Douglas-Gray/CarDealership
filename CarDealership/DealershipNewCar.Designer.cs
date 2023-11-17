@@ -40,9 +40,9 @@
             // 
             // btnHome
             // 
-            this.btnHome.Location = new System.Drawing.Point(167, 342);
+            this.btnHome.Location = new System.Drawing.Point(167, 305);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(103, 32);
+            this.btnHome.Size = new System.Drawing.Size(100, 32);
             this.btnHome.TabIndex = 0;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = true;
@@ -71,7 +71,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(167, 254);
+            this.btnSubmit.Location = new System.Drawing.Point(167, 245);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 4;
@@ -82,7 +82,7 @@
             // lblCarReg
             // 
             this.lblCarReg.AutoSize = true;
-            this.lblCarReg.Location = new System.Drawing.Point(58, 138);
+            this.lblCarReg.Location = new System.Drawing.Point(47, 138);
             this.lblCarReg.Name = "lblCarReg";
             this.lblCarReg.Size = new System.Drawing.Size(103, 16);
             this.lblCarReg.TabIndex = 5;
@@ -91,7 +91,7 @@
             // lblCarBrand
             // 
             this.lblCarBrand.AutoSize = true;
-            this.lblCarBrand.Location = new System.Drawing.Point(58, 166);
+            this.lblCarBrand.Location = new System.Drawing.Point(47, 166);
             this.lblCarBrand.Name = "lblCarBrand";
             this.lblCarBrand.Size = new System.Drawing.Size(67, 16);
             this.lblCarBrand.TabIndex = 6;
@@ -100,7 +100,7 @@
             // lblCarModel
             // 
             this.lblCarModel.AutoSize = true;
-            this.lblCarModel.Location = new System.Drawing.Point(58, 191);
+            this.lblCarModel.Location = new System.Drawing.Point(47, 191);
             this.lblCarModel.Name = "lblCarModel";
             this.lblCarModel.Size = new System.Drawing.Size(69, 16);
             this.lblCarModel.TabIndex = 7;
