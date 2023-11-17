@@ -1,6 +1,6 @@
 ﻿namespace CarDealership
 {
-    partial class CarQuery
+    partial class DealershipHome
     {
         /// <summary>
         /// Required designer variable.
@@ -33,10 +33,11 @@
             this.carsDataSet = new CarDealership.CarsDataSet();
             this.carsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carsTableAdapter = new CarDealership.CarsDataSetTableAdapters.CarsTableAdapter();
-            this.comboBoxCars = new System.Windows.Forms.ComboBox();
-            this.richTextBoxCars = new System.Windows.Forms.RichTextBox();
+            this.comboBoxBrands = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.listBoxCar = new System.Windows.Forms.ListBox();
+            this.btnAddNewCars = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.carsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -65,28 +66,20 @@
             // 
             this.carsTableAdapter.ClearBeforeFill = true;
             // 
-            // comboBoxCars
+            // comboBoxBrands
             // 
-            this.comboBoxCars.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCars.FormattingEnabled = true;
-            this.comboBoxCars.Items.AddRange(new object[] {
+            this.comboBoxBrands.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBrands.FormattingEnabled = true;
+            this.comboBoxBrands.Items.AddRange(new object[] {
             "Honda",
             "Toyota",
             "Suzuki",
             "Mazda",
             "N/A Brand"});
-            this.comboBoxCars.Location = new System.Drawing.Point(111, 197);
-            this.comboBoxCars.Name = "comboBoxCars";
-            this.comboBoxCars.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxCars.TabIndex = 1;
-            // 
-            // richTextBoxCars
-            // 
-            this.richTextBoxCars.Location = new System.Drawing.Point(111, 270);
-            this.richTextBoxCars.Name = "richTextBoxCars";
-            this.richTextBoxCars.Size = new System.Drawing.Size(293, 96);
-            this.richTextBoxCars.TabIndex = 2;
-            this.richTextBoxCars.Text = "";
+            this.comboBoxBrands.Location = new System.Drawing.Point(111, 197);
+            this.comboBoxBrands.Name = "comboBoxBrands";
+            this.comboBoxBrands.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxBrands.TabIndex = 1;
             // 
             // label1
             // 
@@ -107,20 +100,40 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Available Cars";
             // 
-            // CarQuery
+            // listBoxCar
+            // 
+            this.listBoxCar.FormattingEnabled = true;
+            this.listBoxCar.ItemHeight = 16;
+            this.listBoxCar.Location = new System.Drawing.Point(111, 264);
+            this.listBoxCar.Name = "listBoxCar";
+            this.listBoxCar.Size = new System.Drawing.Size(293, 164);
+            this.listBoxCar.TabIndex = 5;
+            // 
+            // btnAddNewCars
+            // 
+            this.btnAddNewCars.Location = new System.Drawing.Point(111, 471);
+            this.btnAddNewCars.Name = "btnAddNewCars";
+            this.btnAddNewCars.Size = new System.Drawing.Size(140, 31);
+            this.btnAddNewCars.TabIndex = 6;
+            this.btnAddNewCars.Text = "Add new cars";
+            this.btnAddNewCars.UseVisualStyleBackColor = true;
+            this.btnAddNewCars.Click += new System.EventHandler(this.btnAddNewCars_Click);
+            // 
+            // DealershipHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(731, 487);
+            this.ClientSize = new System.Drawing.Size(746, 570);
+            this.Controls.Add(this.btnAddNewCars);
+            this.Controls.Add(this.listBoxCar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.richTextBoxCars);
-            this.Controls.Add(this.comboBoxCars);
+            this.Controls.Add(this.comboBoxBrands);
             this.Controls.Add(this.btnSubmit);
-            this.Name = "CarQuery";
-            this.Text = "Car Query";
-            this.Load += new System.EventHandler(this.CarQuery_Load);
+            this.Name = "DealershipHome";
+            this.Text = "Dealership Home";
+            this.Load += new System.EventHandler(this.DealershipHome_Load);
             ((System.ComponentModel.ISupportInitialize)(this.carsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -134,10 +147,11 @@
         private CarsDataSet carsDataSet;
         private System.Windows.Forms.BindingSource carsBindingSource;
         private CarsDataSetTableAdapters.CarsTableAdapter carsTableAdapter;
-        private System.Windows.Forms.ComboBox comboBoxCars;
-        private System.Windows.Forms.RichTextBox richTextBoxCars;
+        private System.Windows.Forms.ComboBox comboBoxBrands;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox listBoxCar;
+        private System.Windows.Forms.Button btnAddNewCars;
     }
 }
 

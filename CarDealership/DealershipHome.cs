@@ -12,16 +12,17 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CarDealership
 {
-    public partial class CarQuery : Form
+    public partial class DealershipHome : Form
     {
 
         const string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Douglas\source\repos\CarDealership\CarDealership\Cars.mdf; Integrated Security = True";
-        public CarQuery()
+         
+        public DealershipHome()
         {
             InitializeComponent();
         }
 
-        private void CarQuery_Load(object sender, EventArgs e)
+        private void DealershipHome_Load(object sender, EventArgs e)
         {
 
         }
@@ -30,18 +31,17 @@ namespace CarDealership
         {
             string carModel = "N/A";
             string carBrand = "N/A";
-            string selected = comboBoxCars.Text;
+            string selected = comboBoxBrands.Text;
             List<string> cars = new List<string>();
 
-            richTextBoxCars.Clear(); 
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            listBoxCar.Items.Clear(); 
 
             try
             {
-                SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    
+                using (connection)
+                {                   
                     connection.Open();
 
                     string sql = $"SELECT CarModel, CarBrand FROM Cars WHERE CarBrand = '{selected}'";
@@ -69,10 +69,18 @@ namespace CarDealership
 
             foreach(string car in cars)
             {
-                richTextBoxCars.AppendText($"{car}\n");  
+                listBoxCar.Items.Add($"{car}\n");
             }
 
         }
 
+        private void btnAddNewCars_Click(object sender, EventArgs e)
+        {
+            DealershipNewCar newForm = new DealershipNewCar();
+
+            Hide();
+            newForm.Show(); 
+              
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace CarDealership
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CarQuery());
+            Application.Run(new DealershipHome());
         }
     }
 }

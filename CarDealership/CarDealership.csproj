@@ -66,16 +66,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CarsDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="CarQuery.cs">
+    <Compile Include="DealershipHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CarQuery.Designer.cs">
-      <DependentUpon>CarQuery.cs</DependentUpon>
+    <Compile Include="DealershipHome.Designer.cs">
+      <DependentUpon>DealershipHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DealershipNewCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DealershipNewCar.Designer.cs">
+      <DependentUpon>DealershipNewCar.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CarQuery.resx">
-      <DependentUpon>CarQuery.cs</DependentUpon>
+    <EmbeddedResource Include="DealershipHome.resx">
+      <DependentUpon>DealershipHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DealershipNewCar.resx">
+      <DependentUpon>DealershipNewCar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
