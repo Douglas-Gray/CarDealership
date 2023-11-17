@@ -1,2 +1,2 @@
 # CarDealership
-C# + SQL implementation for a CarDealership
+C# + SQL implementation for a CarDealership Basic CRUD application
