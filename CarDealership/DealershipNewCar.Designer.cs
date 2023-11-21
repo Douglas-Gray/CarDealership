@@ -135,7 +135,7 @@
             this.lblModelValidation.AutoSize = true;
             this.lblModelValidation.BackColor = System.Drawing.SystemColors.Control;
             this.lblModelValidation.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblModelValidation.Location = new System.Drawing.Point(367, 235);
+            this.lblModelValidation.Location = new System.Drawing.Point(367, 238);
             this.lblModelValidation.Name = "lblModelValidation";
             this.lblModelValidation.Size = new System.Drawing.Size(0, 16);
             this.lblModelValidation.TabIndex = 10;
@@ -154,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 480);
+            this.ClientSize = new System.Drawing.Size(582, 478);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblModelValidation);
             this.Controls.Add(this.lblBrandValidation);

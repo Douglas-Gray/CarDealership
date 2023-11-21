@@ -81,5 +81,12 @@ namespace CarDealership
 
             newForm.Show();               
         }
+
+        private void btnDeleteCar_Click(object sender, EventArgs e)
+        {
+            DealershipDeleteCar newForm = new DealershipDeleteCar();
+
+            newForm.Show();
+        }
     }
 }

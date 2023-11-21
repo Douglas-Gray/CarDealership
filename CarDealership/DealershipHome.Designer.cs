@@ -38,6 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.listBoxCar = new System.Windows.Forms.ListBox();
             this.btnAddNewCars = new System.Windows.Forms.Button();
+            this.btnDeleteCar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.carsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -120,12 +121,23 @@
             this.btnAddNewCars.UseVisualStyleBackColor = true;
             this.btnAddNewCars.Click += new System.EventHandler(this.btnAddNewCars_Click);
             // 
+            // btnDeleteCar
+            // 
+            this.btnDeleteCar.Location = new System.Drawing.Point(189, 451);
+            this.btnDeleteCar.Name = "btnDeleteCar";
+            this.btnDeleteCar.Size = new System.Drawing.Size(140, 31);
+            this.btnDeleteCar.TabIndex = 7;
+            this.btnDeleteCar.Text = "Delete Cars";
+            this.btnDeleteCar.UseVisualStyleBackColor = true;
+            this.btnDeleteCar.Click += new System.EventHandler(this.btnDeleteCar_Click);
+            // 
             // DealershipHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(677, 550);
+            this.Controls.Add(this.btnDeleteCar);
             this.Controls.Add(this.btnAddNewCars);
             this.Controls.Add(this.listBoxCar);
             this.Controls.Add(this.label2);
@@ -153,6 +165,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox listBoxCar;
         private System.Windows.Forms.Button btnAddNewCars;
+        private System.Windows.Forms.Button btnDeleteCar;
     }
 }
 

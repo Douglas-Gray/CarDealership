@@ -78,8 +78,17 @@
     <Compile Include="DealershipNewCar.Designer.cs">
       <DependentUpon>DealershipNewCar.cs</DependentUpon>
     </Compile>
+    <Compile Include="DealershipDeleteCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DealershipDeleteCar.Designer.cs">
+      <DependentUpon>DealershipDeleteCar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DealershipDeleteCar.resx">
+      <DependentUpon>DealershipDeleteCar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DealershipHome.resx">
       <DependentUpon>DealershipHome.cs</DependentUpon>
     </EmbeddedResource>
