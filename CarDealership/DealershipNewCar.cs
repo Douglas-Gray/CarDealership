@@ -35,13 +35,12 @@ namespace CarDealership
 
             string sql = $"INSERT INTO Cars (CarReg, CarBrand, CarModel) VALUES ('{carReg}', '{carBrand}', '{carModel}')";
 
-            lblRegValidation.Text = (carReg.Length <= 0 || carReg.Length > 7) ? "Car registration 1 - 7 Characters" : "";
-            lblBrandValidation.Text = (carBrand.Length <= 0) ? "Car brand field required" : "";
-            lblModelValidation.Text = (carModel.Length <= 0) ? "Car model field required" : "";
-
             if (carReg.Length <= 0 || carReg.Length > 7 || carBrand.Length <= 0 || carModel.Length <= 0)
             {
                 MessageBox.Show("Please valid data to input record to database");
+                lblRegValidation.Text = "Car registration 1 - 7 Characters";
+                lblBrandValidation.Text = "Car brand field required";
+                lblModelValidation.Text = "Car model field required";
             }
             else
             {

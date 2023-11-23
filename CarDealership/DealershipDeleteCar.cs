@@ -19,11 +19,6 @@ namespace CarDealership
             InitializeComponent();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Hide(); 
-        }
-
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             string carReg = txtCarReg.Text;
@@ -32,11 +27,11 @@ namespace CarDealership
 
             string sql = $"DELETE FROM Cars WHERE CarReg = '{carReg}'";
 
-            lblRegValidation.Text = (carReg.Length <= 0 || carReg.Length > 7) ? "Car registration 1 - 7 Characters" : "";
 
             if (carReg.Length <= 0 || carReg.Length > 7)
             {
                 MessageBox.Show("Please valid data to input record to database");
+                lblRegValidation.Text = "Car registration 1 - 7 Characters";
             }
             else
             {
@@ -63,6 +58,10 @@ namespace CarDealership
                     connection.Close();
                 }
             }
+        }
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Hide();
         }
     }
 }

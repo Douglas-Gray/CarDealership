@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnSubmit = new System.Windows.Forms.Button();
             this.carsDataSet = new CarDealership.CarsDataSet();
             this.carsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carsTableAdapter = new CarDealership.CarsDataSetTableAdapters.CarsTableAdapter();
@@ -43,16 +42,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.carsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnSubmit
-            // 
-            this.btnSubmit.Location = new System.Drawing.Point(317, 192);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 0;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.button1_Click);
             // 
             // carsDataSet
             // 
@@ -83,6 +72,7 @@
             this.comboBoxBrands.Name = "comboBoxBrands";
             this.comboBoxBrands.Size = new System.Drawing.Size(121, 24);
             this.comboBoxBrands.TabIndex = 1;
+            this.comboBoxBrands.SelectedIndexChanged += new System.EventHandler(this.comboBoxBrands_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -155,7 +145,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxBrands);
-            this.Controls.Add(this.btnSubmit);
             this.Name = "DealershipHome";
             this.Text = "Dealership Home";
             this.Load += new System.EventHandler(this.DealershipHome_Load);
@@ -167,8 +156,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnSubmit;
         private CarsDataSet carsDataSet;
         private System.Windows.Forms.BindingSource carsBindingSource;
         private CarsDataSetTableAdapters.CarsTableAdapter carsTableAdapter;
