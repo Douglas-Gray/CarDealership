@@ -39,13 +39,14 @@
             this.listBoxCar = new System.Windows.Forms.ListBox();
             this.btnAddNewCars = new System.Windows.Forms.Button();
             this.btnDeleteCar = new System.Windows.Forms.Button();
+            this.btnUpdateCar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.carsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(254, 178);
+            this.btnSubmit.Location = new System.Drawing.Point(317, 192);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 0;
@@ -78,7 +79,7 @@
             "Suzuki",
             "Mazda",
             "N/A Brand"});
-            this.comboBoxBrands.Location = new System.Drawing.Point(36, 177);
+            this.comboBoxBrands.Location = new System.Drawing.Point(99, 191);
             this.comboBoxBrands.Name = "comboBoxBrands";
             this.comboBoxBrands.Size = new System.Drawing.Size(121, 24);
             this.comboBoxBrands.TabIndex = 1;
@@ -86,7 +87,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 158);
+            this.label1.Location = new System.Drawing.Point(96, 172);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 16);
             this.label1.TabIndex = 3;
@@ -96,7 +97,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(36, 38);
+            this.label2.Location = new System.Drawing.Point(99, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(242, 38);
             this.label2.TabIndex = 4;
@@ -106,14 +107,14 @@
             // 
             this.listBoxCar.FormattingEnabled = true;
             this.listBoxCar.ItemHeight = 16;
-            this.listBoxCar.Location = new System.Drawing.Point(36, 244);
+            this.listBoxCar.Location = new System.Drawing.Point(99, 258);
             this.listBoxCar.Name = "listBoxCar";
             this.listBoxCar.Size = new System.Drawing.Size(293, 164);
             this.listBoxCar.TabIndex = 5;
             // 
             // btnAddNewCars
             // 
-            this.btnAddNewCars.Location = new System.Drawing.Point(36, 451);
+            this.btnAddNewCars.Location = new System.Drawing.Point(417, 258);
             this.btnAddNewCars.Name = "btnAddNewCars";
             this.btnAddNewCars.Size = new System.Drawing.Size(140, 31);
             this.btnAddNewCars.TabIndex = 6;
@@ -123,7 +124,7 @@
             // 
             // btnDeleteCar
             // 
-            this.btnDeleteCar.Location = new System.Drawing.Point(189, 451);
+            this.btnDeleteCar.Location = new System.Drawing.Point(417, 391);
             this.btnDeleteCar.Name = "btnDeleteCar";
             this.btnDeleteCar.Size = new System.Drawing.Size(140, 31);
             this.btnDeleteCar.TabIndex = 7;
@@ -131,12 +132,23 @@
             this.btnDeleteCar.UseVisualStyleBackColor = true;
             this.btnDeleteCar.Click += new System.EventHandler(this.btnDeleteCar_Click);
             // 
+            // btnUpdateCar
+            // 
+            this.btnUpdateCar.Location = new System.Drawing.Point(417, 326);
+            this.btnUpdateCar.Name = "btnUpdateCar";
+            this.btnUpdateCar.Size = new System.Drawing.Size(140, 31);
+            this.btnUpdateCar.TabIndex = 8;
+            this.btnUpdateCar.Text = "Update Cars";
+            this.btnUpdateCar.UseVisualStyleBackColor = true;
+            this.btnUpdateCar.Click += new System.EventHandler(this.btnUpdateCar_Click);
+            // 
             // DealershipHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(677, 550);
+            this.ClientSize = new System.Drawing.Size(779, 570);
+            this.Controls.Add(this.btnUpdateCar);
             this.Controls.Add(this.btnDeleteCar);
             this.Controls.Add(this.btnAddNewCars);
             this.Controls.Add(this.listBoxCar);
@@ -166,6 +178,7 @@
         private System.Windows.Forms.ListBox listBoxCar;
         private System.Windows.Forms.Button btnAddNewCars;
         private System.Windows.Forms.Button btnDeleteCar;
+        private System.Windows.Forms.Button btnUpdateCar;
     }
 }
 

@@ -88,5 +88,12 @@ namespace CarDealership
 
             newForm.Show();
         }
+
+        private void btnUpdateCar_Click(object sender, EventArgs e)
+        {
+            DealershipUpdate newForm = new DealershipUpdate();
+
+            newForm.Show();
+        }
     }
 }
