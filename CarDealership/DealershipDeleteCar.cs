@@ -13,7 +13,6 @@ namespace CarDealership
 {
     public partial class DealershipDeleteCar : Form
     {
-        const string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Douglas\source\repos\CarDealership\CarDealership\Cars.mdf; Integrated Security = True";
         public DealershipDeleteCar()
         {
             InitializeComponent();
@@ -22,8 +21,6 @@ namespace CarDealership
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             string carReg = txtCarReg.Text;
-
-            SqlConnection connection = new SqlConnection(connectionString);
 
             string sql = $"DELETE FROM Cars WHERE CarReg = '{carReg}'";
 
@@ -35,28 +32,9 @@ namespace CarDealership
             }
             else
             {
-                try
-                {
+                QueryHandler queryHandler = new QueryHandler();
 
-                    using (connection)
-                    {
-                        connection.Open();
-                        {
-
-                            var cmd = new SqlCommand(sql, connection);
-
-                            cmd.ExecuteNonQuery();
-
-                        }
-                        MessageBox.Show("Car Deleted");
-                        connection.Close();
-                    }
-                }
-                catch (SqlException er)
-                {
-                    MessageBox.Show("Failed to connect to Database!" + er.ToString());
-                    connection.Close();
-                }
+                MessageBox.Show(queryHandler.UpdateDB(sql));
             }
         }
         private void btnExit_Click(object sender, EventArgs e)

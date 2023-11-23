@@ -66,6 +66,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CarsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QueryHandler.cs" />
     <Compile Include="DealershipHome.cs">
       <SubType>Form</SubType>
     </Compile>

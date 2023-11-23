@@ -14,7 +14,6 @@ namespace CarDealership
 {
     public partial class DealershipNewCar : Form
     {
-        const string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Douglas\source\repos\CarDealership\CarDealership\Cars.mdf; Integrated Security = True";
         public DealershipNewCar()
         {
             InitializeComponent();
@@ -31,8 +30,6 @@ namespace CarDealership
             string carBrand = txtCarBrand.Text;
             string carModel = txtCarModel.Text; 
 
-            SqlConnection connection = new SqlConnection(connectionString);
-
             string sql = $"INSERT INTO Cars (CarReg, CarBrand, CarModel) VALUES ('{carReg}', '{carBrand}', '{carModel}')";
 
             if (carReg.Length <= 0 || carReg.Length > 7 || carBrand.Length <= 0 || carModel.Length <= 0)
@@ -44,31 +41,11 @@ namespace CarDealership
             }
             else
             {
-                try
-                {
+                QueryHandler queryHandler = new QueryHandler();
 
-                    using (connection)
-                    {
-                        connection.Open();
-                        {
-
-                            var cmd = new SqlCommand(sql, connection);
-
-                            cmd.ExecuteNonQuery();
-
-                        }
-                        MessageBox.Show("New Record Created");
-                        connection.Close();
-                    }
-                }
-                catch (SqlException er)
-                {
-                    MessageBox.Show("Failed to connect to Database!" + er.ToString());
-                    connection.Close();
-                }
+                MessageBox.Show(queryHandler.UpdateDB(sql));
             }
         }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             Hide();

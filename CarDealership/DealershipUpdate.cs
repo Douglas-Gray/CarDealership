@@ -28,7 +28,6 @@ namespace CarDealership
 
             string sql = $"SELECT CarModel, CarBrand, CarReg FROM Cars WHERE CarReg = '{selected}'";
 
-
             try
             {
                 using (connection)
@@ -71,9 +70,8 @@ namespace CarDealership
             string carBrand = txtUpdateCarBrand.Text;
             string carModel = txtUpdateCarModel.Text;
 
-            SqlConnection connection = new SqlConnection(connectionString);
-
             string sql = $"UPDATE Cars SET CarBrand = '{carBrand}', CarModel = '{carModel}', CarReg = '{carReg}' WHERE CarReg = '{oldCarReg}'";
+
 
             if (carReg.Length <= 0 || carReg.Length > 7 || carBrand.Length <= 0 || carModel.Length <= 0)
             {
@@ -84,28 +82,9 @@ namespace CarDealership
             }
             else
             {
-                try
-                {
+                QueryHandler queryHandler = new QueryHandler();
 
-                    using (connection)
-                    {
-                        connection.Open();
-                        {
-
-                            var cmd = new SqlCommand(sql, connection);
-
-                            cmd.ExecuteNonQuery();
-
-                        }
-                        MessageBox.Show("Record Updated");
-                        connection.Close();
-                    }
-                }
-                catch (SqlException er)
-                {
-                    MessageBox.Show("Failed to connect to Database!" + er.ToString());
-                    connection.Close();
-                }
+                MessageBox.Show(queryHandler.UpdateDB(sql)); 
             }
         }
 
