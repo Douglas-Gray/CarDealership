@@ -41,5 +41,10 @@ namespace CarDealership
         {
             Close();
         }
+
+        private void DealershipDeleteCar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

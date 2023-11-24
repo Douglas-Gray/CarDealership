@@ -97,6 +97,7 @@
             this.listBoxCar.Name = "listBoxCar";
             this.listBoxCar.Size = new System.Drawing.Size(293, 164);
             this.listBoxCar.TabIndex = 5;
+            this.listBoxCar.SelectedIndexChanged += new System.EventHandler(this.listBoxCar_SelectedIndexChanged);
             // 
             // btnAddNewCars
             // 
@@ -144,7 +145,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(779, 570);
+            this.ClientSize = new System.Drawing.Size(644, 512);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnUpdateCar);
             this.Controls.Add(this.btnDeleteCar);

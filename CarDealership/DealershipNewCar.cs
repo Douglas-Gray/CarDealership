@@ -28,16 +28,18 @@ namespace CarDealership
         {
             string carReg = txtCarReg.Text;
             string carBrand = txtCarBrand.Text;
-            string carModel = txtCarModel.Text; 
+            string carModel = txtCarModel.Text;
+            string carColour = txtCarColour.Text; 
 
-            string sql = $"INSERT INTO Cars (CarReg, CarBrand, CarModel) VALUES ('{carReg}', '{carBrand}', '{carModel}')";
+            string sql = $"INSERT INTO Cars (CarReg, CarBrand, CarModel, CarColour) VALUES ('{carReg}', '{carBrand}', '{carModel}', '{carColour}')";
 
-            if (carReg.Length <= 0 || carReg.Length > 7 || carBrand.Length <= 0 || carModel.Length <= 0)
+            if (carReg.Length <= 0 || carReg.Length > 7 || carBrand.Length <= 0 || carModel.Length <= 0 || carColour.Length <= 0)
             {
                 MessageBox.Show("Please valid data to input record to database");
                 lblRegValidation.Text = "Car registration 1 - 7 Characters";
                 lblBrandValidation.Text = "Car brand field required";
                 lblModelValidation.Text = "Car model field required";
+                lblColourValidation.Text = "Car colour field required"; 
             }
             else
             {

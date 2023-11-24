@@ -44,6 +44,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtCurrentCarReg = new System.Windows.Forms.TextBox();
             this.btnFind = new System.Windows.Forms.Button();
+            this.lblColourValidation = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtUpdateCarColour = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -115,7 +118,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(295, 331);
+            this.btnUpdate.Location = new System.Drawing.Point(295, 362);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 25);
             this.btnUpdate.TabIndex = 16;
@@ -146,9 +149,9 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(281, 404);
+            this.btnExit.Location = new System.Drawing.Point(148, 360);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(100, 32);
+            this.btnExit.Size = new System.Drawing.Size(100, 27);
             this.btnExit.TabIndex = 12;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -190,11 +193,40 @@
             this.btnFind.UseVisualStyleBackColor = true;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
+            // lblColourValidation
+            // 
+            this.lblColourValidation.AutoSize = true;
+            this.lblColourValidation.BackColor = System.Drawing.SystemColors.Control;
+            this.lblColourValidation.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblColourValidation.Location = new System.Drawing.Point(387, 319);
+            this.lblColourValidation.Name = "lblColourValidation";
+            this.lblColourValidation.Size = new System.Drawing.Size(0, 16);
+            this.lblColourValidation.TabIndex = 30;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(145, 319);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(118, 16);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Update Car Colour";
+            // 
+            // txtUpdateCarColour
+            // 
+            this.txtUpdateCarColour.Location = new System.Drawing.Point(281, 316);
+            this.txtUpdateCarColour.Name = "txtUpdateCarColour";
+            this.txtUpdateCarColour.Size = new System.Drawing.Size(100, 22);
+            this.txtUpdateCarColour.TabIndex = 28;
+            // 
             // DealershipUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 531);
+            this.Controls.Add(this.lblColourValidation);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtUpdateCarColour);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
@@ -212,6 +244,7 @@
             this.Controls.Add(this.txtUpdateCarReg);
             this.Controls.Add(this.btnExit);
             this.Name = "DealershipUpdate";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.DealershipUpdate_Load);
             this.ResumeLayout(false);
@@ -237,5 +270,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCurrentCarReg;
         private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.Label lblColourValidation;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtUpdateCarColour;
     }
 }

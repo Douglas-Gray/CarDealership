@@ -38,9 +38,9 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(162, 295);
+            this.btnExit.Location = new System.Drawing.Point(86, 221);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(100, 32);
+            this.btnExit.Size = new System.Drawing.Size(84, 23);
             this.btnExit.TabIndex = 1;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -48,18 +48,18 @@
             // 
             // txtCarReg
             // 
-            this.txtCarReg.Location = new System.Drawing.Point(162, 158);
+            this.txtCarReg.Location = new System.Drawing.Point(192, 167);
             this.txtCarReg.Name = "txtCarReg";
             this.txtCarReg.Size = new System.Drawing.Size(100, 22);
             this.txtCarReg.TabIndex = 2;
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(173, 207);
+            this.btnSubmit.Location = new System.Drawing.Point(208, 221);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 5;
-            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.Text = "Delete";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
@@ -68,7 +68,7 @@
             this.lblRegValidation.AutoSize = true;
             this.lblRegValidation.BackColor = System.Drawing.SystemColors.Control;
             this.lblRegValidation.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblRegValidation.Location = new System.Drawing.Point(268, 161);
+            this.lblRegValidation.Location = new System.Drawing.Point(189, 192);
             this.lblRegValidation.Name = "lblRegValidation";
             this.lblRegValidation.Size = new System.Drawing.Size(0, 16);
             this.lblRegValidation.TabIndex = 9;
@@ -76,7 +76,7 @@
             // lblCarReg
             // 
             this.lblCarReg.AutoSize = true;
-            this.lblCarReg.Location = new System.Drawing.Point(53, 161);
+            this.lblCarReg.Location = new System.Drawing.Point(83, 170);
             this.lblCarReg.Name = "lblCarReg";
             this.lblCarReg.Size = new System.Drawing.Size(103, 16);
             this.lblCarReg.TabIndex = 10;
@@ -86,7 +86,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(49, 60);
+            this.label1.Location = new System.Drawing.Point(75, 83);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(208, 38);
             this.label1.TabIndex = 12;
@@ -96,7 +96,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(502, 378);
+            this.ClientSize = new System.Drawing.Size(433, 371);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCarReg);
             this.Controls.Add(this.lblRegValidation);
@@ -104,7 +104,9 @@
             this.Controls.Add(this.txtCarReg);
             this.Controls.Add(this.btnExit);
             this.Name = "DealershipDeleteCar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Delete Car";
+            this.Load += new System.EventHandler(this.DealershipDeleteCar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -18,11 +18,12 @@ namespace CarDealership
             InitializeComponent();
         }
 
-        public void Refresh()
+        public void RefreshElements()
         {
-            string sql = $"SELECT DISTINCT CarModel, CarBrand, CarReg FROM Cars";
+            string sql = $"SELECT DISTINCT CarModel, CarBrand, CarReg, CarColour FROM Cars";
 
             comboBoxBrands.Items.Clear();
+            listBoxCar.Items.Clear();
             comboBoxBrands.Items.Add("All");
 
             QueryHandler queryHandler = new QueryHandler();
@@ -35,12 +36,14 @@ namespace CarDealership
                 {
                     comboBoxBrands.Items.Add($"{car.Brand}");
                 }
+
+                listBoxCar.Items.Add($"{car.Brand} {car.Model} {car.Colour} - {car.Reg.Trim()}\n");
             }
         }
        
         private void DealershipHome_Load(object sender, EventArgs e)
         {
-            Refresh(); 
+            RefreshElements(); 
         }
 
         private void btnAddNewCars_Click(object sender, EventArgs e)
@@ -70,7 +73,7 @@ namespace CarDealership
         
             listBoxCar.Items.Clear();
 
-            string sql = (selected.Equals("All")) ? $"SELECT CarModel, CarBrand, CarReg FROM Cars" : $"SELECT CarModel, CarBrand, CarReg FROM Cars WHERE CarBrand = '{selected}'";
+            string sql = (selected.Equals("All")) ? $"SELECT CarModel, CarBrand, CarReg, CarColour FROM Cars" : $"SELECT CarModel, CarBrand, CarReg, CarColour FROM Cars WHERE CarBrand = '{selected}'";
 
             QueryHandler queryHandler = new QueryHandler();
 
@@ -78,13 +81,18 @@ namespace CarDealership
 
             foreach (Car car in cars)
             {
-                listBoxCar.Items.Add($"{car.Brand} {car.Model} {car.Reg}\n");
+                listBoxCar.Items.Add($"{car.Brand} {car.Model} {car.Colour} - {car.Reg.Trim()}\n");
             }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            Refresh();
+            RefreshElements();
+        }
+
+        private void listBoxCar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
