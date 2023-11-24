@@ -11,11 +11,13 @@ namespace CarDealership
         public string Reg { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }
-        public Car(string reg, string brand, string model)
+        public string Colour { get; set; }
+        public Car(string reg, string brand, string model, string colour)
         {
             Reg = reg;
             Brand = brand;
-            Model = model; 
+            Model = model;
+            Colour = colour; 
         }
 
     }

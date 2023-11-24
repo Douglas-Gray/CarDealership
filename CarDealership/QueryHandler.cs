@@ -66,7 +66,7 @@ namespace CarDealership
                         {
                             while (carReader.Read())
                             {
-                                Car car = new Car((string)carReader["CarReg"], (string)carReader["CarBrand"], (string)carReader["CarModel"]); 
+                                Car car = new Car((string)carReader["CarReg"], (string)carReader["CarBrand"], (string)carReader["CarModel"], (string)carReader["CarColour"]); 
 
                                 cars.Add(car); 
                             }
@@ -84,7 +84,7 @@ namespace CarDealership
 
             if (cars.Count <= 0)
             {
-                Car car = new Car("N/A", "N/A", "N/A");
+                Car car = new Car("N/A", "N/A", "N/A", "N/A");
                 cars.Add(car); 
             }
 
