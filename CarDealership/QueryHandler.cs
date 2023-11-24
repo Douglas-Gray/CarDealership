@@ -48,5 +48,48 @@ namespace CarDealership
             return message; 
         }
 
+        public List<Car> SelectDB(string sqlStatement)
+        {
+            List<Car> cars = new List<Car>();
+
+            SqlConnection connection = new SqlConnection(connectionString);
+            
+            try
+            {
+                using (connection)
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand(sqlStatement, connection))
+                    {
+                        using (SqlDataReader carReader = command.ExecuteReader())
+                        {
+                            while (carReader.Read())
+                            {
+                                Car car = new Car((string)carReader["CarReg"], (string)carReader["CarBrand"], (string)carReader["CarModel"]); 
+
+                                cars.Add(car); 
+                            }
+                            carReader.Close();
+                        }
+                    }
+                    connection.Close();
+                }
+            }
+            catch (SqlException er)
+            {
+                MessageBox.Show("Failed to connect to Database!" + er.ToString());
+                connection.Close();
+            }
+
+            if (cars.Count <= 0)
+            {
+                Car car = new Car("N/A", "N/A", "N/A");
+                cars.Add(car); 
+            }
+
+            return cars; 
+        }
+
     }
 }
