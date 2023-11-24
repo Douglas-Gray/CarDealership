@@ -12,19 +12,18 @@ using System.Windows.Forms;
 namespace CarDealership
 {
     public partial class DealershipHome : Form
-    {
-
-        const string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Douglas\source\repos\CarDealership\CarDealership\Cars.mdf; Integrated Security = True";
-         
+    {         
         public DealershipHome()
         {
             InitializeComponent();
         }
-       
-        private void DealershipHome_Load(object sender, EventArgs e)
-        {
 
+        public void Refresh()
+        {
             string sql = $"SELECT DISTINCT CarModel, CarBrand, CarReg FROM Cars";
+
+            comboBoxBrands.Items.Clear();
+            comboBoxBrands.Items.Add("All");
 
             QueryHandler queryHandler = new QueryHandler();
 
@@ -35,9 +34,13 @@ namespace CarDealership
                 if (!comboBoxBrands.Items.Contains(car.Brand))
                 {
                     comboBoxBrands.Items.Add($"{car.Brand}");
-                }  
+                }
             }
-
+        }
+       
+        private void DealershipHome_Load(object sender, EventArgs e)
+        {
+            Refresh(); 
         }
 
         private void btnAddNewCars_Click(object sender, EventArgs e)
@@ -77,6 +80,11 @@ namespace CarDealership
             {
                 listBoxCar.Items.Add($"{car.Brand} {car.Model} {car.Reg}\n");
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            Refresh();
         }
     }
 }

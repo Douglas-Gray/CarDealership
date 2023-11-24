@@ -39,6 +39,7 @@
             this.btnAddNewCars = new System.Windows.Forms.Button();
             this.btnDeleteCar = new System.Windows.Forms.Button();
             this.btnUpdateCar = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.carsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -127,12 +128,24 @@
             this.btnUpdateCar.UseVisualStyleBackColor = true;
             this.btnUpdateCar.Click += new System.EventHandler(this.btnUpdateCar_Click);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.Location = new System.Drawing.Point(343, 191);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(49, 43);
+            this.btnRefresh.TabIndex = 9;
+            this.btnRefresh.Text = "↻";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // DealershipHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(779, 570);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnUpdateCar);
             this.Controls.Add(this.btnDeleteCar);
             this.Controls.Add(this.btnAddNewCars);
@@ -161,6 +174,7 @@
         private System.Windows.Forms.Button btnAddNewCars;
         private System.Windows.Forms.Button btnDeleteCar;
         private System.Windows.Forms.Button btnUpdateCar;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
 
