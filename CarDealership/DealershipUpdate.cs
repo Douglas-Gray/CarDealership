@@ -13,7 +13,6 @@ namespace CarDealership
 {
     public partial class DealershipUpdate : Form
     {
-        const string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Douglas\source\repos\CarDealership\CarDealership\Cars.mdf; Integrated Security = True";
         public DealershipUpdate()
         {
             InitializeComponent();
@@ -24,44 +23,19 @@ namespace CarDealership
 
             string selected = txtCurrentCarReg.Text;
 
-            SqlConnection connection = new SqlConnection(connectionString);
-
             string sql = $"SELECT CarModel, CarBrand, CarReg FROM Cars WHERE CarReg = '{selected}'";
 
-            try
-            {
-                using (connection)
-                {
-                    connection.Open();
+            QueryHandler queryHandler = new QueryHandler();
 
-                    using (SqlCommand command = new SqlCommand(sql, connection))
-                    {
-                        using (SqlDataReader carReader = command.ExecuteReader())
-                        {
-                            while (carReader.Read())
-                            {
-                                string carReg = (string)carReader["CarReg"];
-                                carReg = carReg.Trim();
+            List<Car> cars = queryHandler.SelectDB(sql);
 
-                                txtUpdateCarBrand.Text = (string) carReader["CarBrand"];
-                                txtUpdateCarModel.Text = (string) carReader["CarModel"];
-                                txtUpdateCarReg.Text = carReg; 
-                            }
-                            carReader.Close();
-                        }
-                    }
-                    connection.Close();
-                }
-            }
-            catch (SqlException er)
-            {
-                MessageBox.Show("Failed to connect to Database!" + er.ToString());
-                connection.Close();
-            }
+            Car car = cars[0]; 
 
+            txtUpdateCarBrand.Text = car.Brand;
+            txtUpdateCarModel.Text = car.Model;
+            txtUpdateCarReg.Text = car.Reg.Trim(); 
+                       
         }
-
-       
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {

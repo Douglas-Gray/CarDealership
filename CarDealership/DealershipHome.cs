@@ -8,8 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace CarDealership
 {
@@ -22,10 +20,23 @@ namespace CarDealership
         {
             InitializeComponent();
         }
-
+       
         private void DealershipHome_Load(object sender, EventArgs e)
         {
 
+            string sql = $"SELECT DISTINCT CarModel, CarBrand, CarReg FROM Cars";
+
+            QueryHandler queryHandler = new QueryHandler();
+
+            List<Car> cars = queryHandler.SelectDB(sql);
+
+            foreach (Car car in cars)
+            {
+                if (!comboBoxBrands.Items.Contains(car.Brand))
+                {
+                    comboBoxBrands.Items.Add($"{car.Brand}");
+                }  
+            }
 
         }
 
@@ -53,44 +64,18 @@ namespace CarDealership
         private void comboBoxBrands_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selected = comboBoxBrands.Text;
-            List<string> cars = new List<string>();
-
-            SqlConnection connection = new SqlConnection(connectionString);
+        
             listBoxCar.Items.Clear();
 
             string sql = (selected.Equals("All")) ? $"SELECT CarModel, CarBrand, CarReg FROM Cars" : $"SELECT CarModel, CarBrand, CarReg FROM Cars WHERE CarBrand = '{selected}'";
 
-            try
+            QueryHandler queryHandler = new QueryHandler();
+
+            List<Car> cars = queryHandler.SelectDB(sql);
+
+            foreach (Car car in cars)
             {
-                using (connection)
-                {
-                    connection.Open();
-
-                    using (SqlCommand command = new SqlCommand(sql, connection))
-                    {
-                        using (SqlDataReader carReader = command.ExecuteReader())
-                        {
-                            while (carReader.Read())
-                            {
-
-                                cars.Add($"{(string)carReader["CarBrand"]} {(string)carReader["CarModel"]} {(string)carReader["CarReg"]}");
-
-                            }
-                            carReader.Close();
-                        }
-                    }
-                    connection.Close();
-                }
-            }
-            catch (SqlException er)
-            {
-                MessageBox.Show("Failed to connect to Database!" + er.ToString());
-                connection.Close();
-            }
-
-            foreach (string car in cars)
-            {
-                listBoxCar.Items.Add($"{car}\n");
+                listBoxCar.Items.Add($"{car.Brand} {car.Model} {car.Reg}\n");
             }
         }
     }

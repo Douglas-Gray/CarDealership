@@ -62,12 +62,7 @@
             this.comboBoxBrands.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxBrands.FormattingEnabled = true;
             this.comboBoxBrands.Items.AddRange(new object[] {
-            "All",
-            "Honda",
-            "Toyota",
-            "Suzuki",
-            "Mazda",
-            "N/A Brand"});
+            "All"});
             this.comboBoxBrands.Location = new System.Drawing.Point(99, 191);
             this.comboBoxBrands.Name = "comboBoxBrands";
             this.comboBoxBrands.Size = new System.Drawing.Size(121, 24);
