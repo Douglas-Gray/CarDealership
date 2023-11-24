@@ -48,7 +48,7 @@ namespace CarDealership
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Hide();
+            Close();
         }
 
     }

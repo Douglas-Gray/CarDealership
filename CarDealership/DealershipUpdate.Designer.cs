@@ -213,6 +213,7 @@
             this.Controls.Add(this.btnExit);
             this.Name = "DealershipUpdate";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.DealershipUpdate_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

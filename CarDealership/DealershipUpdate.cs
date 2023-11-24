@@ -64,7 +64,12 @@ namespace CarDealership
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Hide();
+            Close();
+        }
+
+        private void DealershipUpdate_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
